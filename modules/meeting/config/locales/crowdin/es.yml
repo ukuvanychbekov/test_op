@@ -1,0 +1,179 @@
+#-- copyright
+#OpenProject is an open source project management software.
+#Copyright (C) 2012-2023 the OpenProject GmbH
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License version 3.
+#OpenProject is a fork of ChiliProject, which is a fork of Redmine. The copyright follows:
+#Copyright (C) 2006-2013 Jean-Philippe Lang
+#Copyright (C) 2010-2013 the ChiliProject Team
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License
+#as published by the Free Software Foundation; either version 2
+#of the License, or (at your option) any later version.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#You should have received a copy of the GNU General Public License
+#along with this program; if not, write to the Free Software
+#Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#See COPYRIGHT and LICENSE files for more details.
+#++
+#English strings go here for Rails i18n
+es:
+  plugin_openproject_meeting:
+    name: "Reuniones de OpenProject"
+    description: >-
+      Este módulo añade funciones para soportar reuniones de proyecto a OpenProject. Se pueden programar reuniones seleccionando invitados del mismo proyecto para participar en la reunión. Una agenda puede ser creada y enviada a los invitados. Después de la reunión, los asistentes pueden ser seleccionados y las actas pueden ser creadas en base a la agenda. Por último, las actas pueden ser enviadas a todos los asistentes y invitados.
+  activerecord:
+    attributes:
+      meeting:
+        type: "Tipo de reunión"
+        location: "Ubicación"
+        duration: "Duración"
+        notes: "Notas"
+        participants: "Participantes"
+        participant:
+          one: "1 Participante"
+          other: "%{count} Participantes"
+        participants_attended: "Asistentes"
+        participants_invited: "Invitados"
+        project: "Proyecto"
+        start_date: "Fecha"
+        start_time: "Tiempo"
+        start_time_hour: "Hora de inicio"
+      meeting_agenda_items:
+        title: "Título"
+        author: "Responsable"
+        duration_in_minutes: "Duración (min)"
+        description: "Notas"
+    errors:
+      messages:
+        invalid_time_format: "no es una hora válida. Formato requerido: HH:MM"
+    models:
+      structured_meeting: "Reunión (dinámico)"
+      meeting_agenda_item: "Puntos de Agenda"
+      meeting_agenda: "Agenda"
+      meeting_minutes: "Minutas"
+  activity:
+    filter:
+      meeting: "Reuniones"
+  description_attended: "ha asistido"
+  description_invite: "invitado"
+  events:
+    meeting: Reunión editada
+    meeting_agenda: Agenda de reuniones editada
+    meeting_agenda_closed: Agenda de reuniones cerrada
+    meeting_agenda_opened: Agenda de reuniones abierta
+    meeting_minutes: Minuta de reunión editada
+    meeting_minutes_created: Minuta de reuniones creada
+  error_notification_with_errors: "Error al enviar la notificación. Los siguientes destinatarios no han sido notificados: %{recipients}"
+  label_meeting: "Reunión"
+  label_meeting_plural: "Reuniones"
+  label_meeting_new: "Nueva reunión"
+  label_meeting_edit: "Editar reunión"
+  label_meeting_agenda: "Agenda"
+  label_meeting_minutes: "Minutas"
+  label_meeting_close: "Cerrar"
+  label_meeting_open: "Abrir"
+  label_meeting_agenda_close: "Cerrar la agenda para comenzar la minuta"
+  label_meeting_date_time: "Fecha/hora"
+  label_meeting_diff: "Diferencia"
+  label_upcoming_meetings: "Próximas reuniones"
+  label_past_meetings: "Reuniones anteriores"
+  label_upcoming_meetings_short: "Próximamente"
+  label_past_meetings_short: "Pasado"
+  label_involvement: "Implicación"
+  label_upcoming_invitations: "Próximas invitaciones"
+  label_past_invitations: "Invitaciones pasadas"
+  label_attendee: "Asistente"
+  label_author: "Autor"
+  label_notify: "Enviar para revisión"
+  label_icalendar: "Enviar iCalendar"
+  label_icalendar_download: "Descargar evento iCalendar"
+  label_version: "Versión"
+  label_time_zone: "Zona horaria"
+  label_start_date: "Fecha de inicio"
+  meeting:
+    email:
+      open_meeting_link: "Abrir reunión"
+      invited:
+        summary: "%{actor} te ha enviado una invitación para la reunión %{title}"
+      rescheduled:
+        summary: "Meeting %{title} has been rescheduled by %{actor}"
+        body: "The meeting %{title} has been rescheduled by %{actor}."
+        old_date_time: "Old date/time"
+        new_date_time: "New date/time"
+    label_mail_all_participants: "Send email to all participants"
+    types:
+      classic: 'Clásico'
+      classic_text: 'Organice su reunión en un formato de agenda de texto y protocolos.'
+      structured: 'Dinámico'
+      structured_text: 'Organize your meeting as a list of agenda items, optionally linking them to a work package.'
+      structured_text_copy: 'Copying a meeting will currently not copy the associated meeting agenda items, just the details'
+    copied: "Copiado de la reunión %{id}"
+  notice_successful_notification: "Notificación enviada correctamente"
+  notice_timezone_missing: No se ha establecido zona horaria y se asume %{zone}. Para elegir su zona horaria, por favor, haga clic aquí.
+  permission_create_meetings: "Crear reuniones"
+  permission_edit_meetings: "Editar reuniones"
+  permission_delete_meetings: "Eliminar reuniones"
+  permission_view_meetings: "Ver reuniones"
+  permission_create_meeting_agendas: "Create meeting agendas"
+  permission_create_meeting_agendas_explanation: "Allows editing the Classic Meeting's agenda content."
+  permission_manage_agendas: "Manage agendas"
+  permission_manage_agendas_explanation: "Allows managing the Dynamic Meeting's agenda items."
+  permission_close_meeting_agendas: "Cerrar agendas"
+  permission_send_meeting_agendas_notification: "Enviar notificaciones de revisión para las agendas"
+  permission_create_meeting_minutes: "Gestionar minutas"
+  permission_send_meeting_minutes_notification: "Enviar notificaciones de revisión para los minutas"
+  permission_meetings_send_invite: "Invitar a usuarios a reuniones"
+  permission_send_meeting_agendas_icalendar: "Enviar agenda de reunión como entrada del calendario"
+  project_module_meetings: "Reuniones"
+  text_duration_in_hours: "Duración en horas"
+  text_in_hours: "en horas"
+  text_meeting_agenda_for_meeting: 'agenda para la reunión "%{meeting}"'
+  text_meeting_closing_are_you_sure: "¿Seguro que quiere cerrar el orden del día de la reunión?"
+  text_meeting_agenda_open_are_you_sure: "Se sobrescribirán todos los cambios en las minutas. ¿Quiere continuar?"
+  text_meeting_minutes_for_meeting: 'minutas para la reunión "%{meeting}"'
+  text_notificiation_invited: "El correo electrónico contiene una entrada ics para la reunión siguiente:"
+  text_meeting_empty_heading: "Your meeting is empty"
+  text_meeting_empty_description_1: "Start by adding agenda items below. Each item can be as simple as just a title, but you can also add additional details like duration, notes and a person responsible."
+  text_meeting_empty_description_2: "You can also add references to existing work packages. When you do, related notes will automatically be visible in the work package's \"Meetings\" tab."
+  label_meeting_empty_action: "Add agenda item"
+  label_meeting_actions: "Meeting actions"
+  label_meeting_edit_title: "Edit meeting title"
+  label_meeting_delete: "Delete meeting"
+  label_meeting_created_by: "Created by"
+  label_meeting_last_updated: "Last updated"
+  label_agenda_item_undisclosed_wp: "Undisclosed work package reference #%{id}"
+  label_agenda_item_deleted_wp: "Deleted work package reference"
+  label_agenda_item_actions: "Agenda items actions"
+  label_agenda_item_move_to_top: "Move to top"
+  label_agenda_item_move_to_bottom: "Move to bottom"
+  label_agenda_item_move_up: "Move up"
+  label_agenda_item_move_down: "Move down"
+  label_agenda_item_add_notes: "Add notes"
+  label_meeting_details: "Meeting details"
+  label_meeting_details_edit: "Edit meeting details"
+  label_meeting_state_open: "Open"
+  label_meeting_state_closed: "Closed"
+  label_meeting_reopen_action: "Reopen meeting"
+  label_meeting_close_action: "Close meeting"
+  text_meeting_open_description: "This meeting is open. You can add/remove agenda items and edit them as you please. After the meeting is over, close it to lock it."
+  text_meeting_closed_description: "This meeting is closed. You cannot add/remove agenda items anymore."
+  label_meeting_manage_participants: "Manage participants"
+  label_meeting_no_participants: "No participants"
+  label_meeting_show_hide_participants: "Show/hide %{count} more"
+  label_meeting_show_all_participants: "Show all"
+  label_meeting_add_participants: "Add participants"
+  text_meeting_not_editable_anymore: "This meeting is not editable anymore."
+  text_meeting_not_present_anymore: "This meeting was deleted. Please select another meeting."
+  label_add_work_package_to_meeting_dialog_title: "Add work package to meeting"
+  label_add_work_package_to_meeting_dialog_button: "Add to meeting"
+  label_meeting_selection_caption: "It's only possible to add this work package to open, upcoming meetings."
+  text_add_work_package_to_meeting_description: "A work package can be added to one or multiple meetings for discussion. Any notes concerning it are also visible here."
+  text_agenda_item_no_notes: "No notes provided"
+  text_agenda_item_not_editable_anymore: "This agenda item is not editable anymore."
+  text_work_package_has_no_upcoming_meeting_agenda_items: "This work package is not scheduled in an upcoming meeting agenda yet."
+  text_work_package_add_to_meeting_hint: "Use the \"Add to meeting\" button to add this work package to an upcoming meeting."
+  text_work_package_has_no_past_meeting_agenda_items: "This work package was not mentioned in a past meeting."

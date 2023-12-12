@@ -1,0 +1,178 @@
+#-- copyright
+#OpenProject is an open source project management software.
+#Copyright (C) 2012-2023 the OpenProject GmbH
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License version 3.
+#OpenProject is a fork of ChiliProject, which is a fork of Redmine. The copyright follows:
+#Copyright (C) 2006-2013 Jean-Philippe Lang
+#Copyright (C) 2010-2013 the ChiliProject Team
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License
+#as published by the Free Software Foundation; either version 2
+#of the License, or (at your option) any later version.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#You should have received a copy of the GNU General Public License
+#along with this program; if not, write to the Free Software
+#Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#See COPYRIGHT and LICENSE files for more details.
+#++
+#English strings go here for Rails i18n
+zh-TW:
+  plugin_openproject_meeting:
+    name: "OpenProject Meeting"
+    description: >-
+      This module adds functions to support project meetings to OpenProject. Meetings can be scheduled selecting invitees from the same project to take part in the meeting. An agenda can be created and sent to the invitees. After the meeting, attendees can be selected and minutes can be created based on the agenda. Finally, the minutes can be sent to all attendees and invitees.
+  activerecord:
+    attributes:
+      meeting:
+        type: "Meeting type"
+        location: "地點"
+        duration: "會議長度"
+        notes: "Notes"
+        participants: "參加人員"
+        participant:
+          other: "%{count} Participants"
+        participants_attended: "出席人員"
+        participants_invited: "受邀人員"
+        project: "Project"
+        start_date: "Date"
+        start_time: "時間"
+        start_time_hour: "開始時間"
+      meeting_agenda_items:
+        title: "Title"
+        author: "Responsible"
+        duration_in_minutes: "Duration (min)"
+        description: "Notes"
+    errors:
+      messages:
+        invalid_time_format: "不是有效時間。所需格式: HH:MM"
+    models:
+      structured_meeting: "Meeting (dynamic)"
+      meeting_agenda_item: "Agenda item"
+      meeting_agenda: "會議大綱"
+      meeting_minutes: "會議記錄"
+  activity:
+    filter:
+      meeting: "會議"
+  description_attended: "出席人員"
+  description_invite: "已邀請"
+  events:
+    meeting: 會議已編輯
+    meeting_agenda: 會議大綱已編輯
+    meeting_agenda_closed: 會議大綱已定案
+    meeting_agenda_opened: 會議大綱開啟
+    meeting_minutes: 會議記錄已編輯
+    meeting_minutes_created: 會議記錄已建立
+  error_notification_with_errors: "傳送通知失敗。以下的收件者將不會被通知到: %{recipients}"
+  label_meeting: "會議"
+  label_meeting_plural: "會議"
+  label_meeting_new: "新增會議"
+  label_meeting_edit: "編輯會議"
+  label_meeting_agenda: "會議大綱"
+  label_meeting_minutes: "會議記錄"
+  label_meeting_close: "結束"
+  label_meeting_open: "開始"
+  label_meeting_agenda_close: "定案會議大綱以便開始會議記錄"
+  label_meeting_date_time: "日期 / 時間"
+  label_meeting_diff: "比較"
+  label_upcoming_meetings: "Upcoming meetings"
+  label_past_meetings: "Past meetings"
+  label_upcoming_meetings_short: "Upcoming"
+  label_past_meetings_short: "Past"
+  label_involvement: "Involvement"
+  label_upcoming_invitations: "Upcoming invitations"
+  label_past_invitations: "Past invitations"
+  label_attendee: "Attendee"
+  label_author: "Creator"
+  label_notify: "送出審閱"
+  label_icalendar: "發送 iCalendar"
+  label_icalendar_download: "Download iCalendar event"
+  label_version: "版本"
+  label_time_zone: "時區"
+  label_start_date: "開始日期"
+  meeting:
+    email:
+      open_meeting_link: "Open meeting"
+      invited:
+        summary: "%{actor} has sent you an invitation for the meeting %{title}"
+      rescheduled:
+        summary: "Meeting %{title} has been rescheduled by %{actor}"
+        body: "The meeting %{title} has been rescheduled by %{actor}."
+        old_date_time: "Old date/time"
+        new_date_time: "New date/time"
+    label_mail_all_participants: "Send email to all participants"
+    types:
+      classic: 'Classic'
+      classic_text: 'Organize your meeting in a formattable text agenda and protocol.'
+      structured: 'Dynamic'
+      structured_text: 'Organize your meeting as a list of agenda items, optionally linking them to a work package.'
+      structured_text_copy: 'Copying a meeting will currently not copy the associated meeting agenda items, just the details'
+    copied: "從會議紀錄 #%{id} 中複製"
+  notice_successful_notification: "通知傳送成功"
+  notice_timezone_missing: 沒有設定時區，預設時區為 %{zone} 。請按這裡選擇您的時區。
+  permission_create_meetings: "建立會議"
+  permission_edit_meetings: "編輯會議"
+  permission_delete_meetings: "刪除會議"
+  permission_view_meetings: "檢視會議"
+  permission_create_meeting_agendas: "Create meeting agendas"
+  permission_create_meeting_agendas_explanation: "Allows editing the Classic Meeting's agenda content."
+  permission_manage_agendas: "Manage agendas"
+  permission_manage_agendas_explanation: "Allows managing the Dynamic Meeting's agenda items."
+  permission_close_meeting_agendas: "定案會議大綱"
+  permission_send_meeting_agendas_notification: "傳送會議大綱審閱通知"
+  permission_create_meeting_minutes: "管理會議記錄"
+  permission_send_meeting_minutes_notification: "傳送會議記錄審閱通知"
+  permission_meetings_send_invite: "邀請使用者加入會議"
+  permission_send_meeting_agendas_icalendar: "將議題大綱傳至行事曆"
+  project_module_meetings: "會議"
+  text_duration_in_hours: "持續時間 (小時)"
+  text_in_hours: "在一小時內"
+  text_meeting_agenda_for_meeting: '%{meeting} 的會議大綱'
+  text_meeting_closing_are_you_sure: "Are you sure you want to close the meeting agenda?"
+  text_meeting_agenda_open_are_you_sure: "將會覆蓋所有會議紀錄中的變動！您希望繼續嗎？"
+  text_meeting_minutes_for_meeting: '%{meeting} 的會議記錄'
+  text_notificiation_invited: "此郵件包含以下會議的 ics 條目:"
+  text_meeting_empty_heading: "Your meeting is empty"
+  text_meeting_empty_description_1: "Start by adding agenda items below. Each item can be as simple as just a title, but you can also add additional details like duration, notes and a person responsible."
+  text_meeting_empty_description_2: "You can also add references to existing work packages. When you do, related notes will automatically be visible in the work package's \"Meetings\" tab."
+  label_meeting_empty_action: "Add agenda item"
+  label_meeting_actions: "Meeting actions"
+  label_meeting_edit_title: "Edit meeting title"
+  label_meeting_delete: "Delete meeting"
+  label_meeting_created_by: "Created by"
+  label_meeting_last_updated: "Last updated"
+  label_agenda_item_undisclosed_wp: "Undisclosed work package reference #%{id}"
+  label_agenda_item_deleted_wp: "Deleted work package reference"
+  label_agenda_item_actions: "Agenda items actions"
+  label_agenda_item_move_to_top: "Move to top"
+  label_agenda_item_move_to_bottom: "Move to bottom"
+  label_agenda_item_move_up: "Move up"
+  label_agenda_item_move_down: "Move down"
+  label_agenda_item_add_notes: "Add notes"
+  label_meeting_details: "Meeting details"
+  label_meeting_details_edit: "Edit meeting details"
+  label_meeting_state_open: "Open"
+  label_meeting_state_closed: "Closed"
+  label_meeting_reopen_action: "Reopen meeting"
+  label_meeting_close_action: "Close meeting"
+  text_meeting_open_description: "This meeting is open. You can add/remove agenda items and edit them as you please. After the meeting is over, close it to lock it."
+  text_meeting_closed_description: "This meeting is closed. You cannot add/remove agenda items anymore."
+  label_meeting_manage_participants: "Manage participants"
+  label_meeting_no_participants: "No participants"
+  label_meeting_show_hide_participants: "Show/hide %{count} more"
+  label_meeting_show_all_participants: "Show all"
+  label_meeting_add_participants: "Add participants"
+  text_meeting_not_editable_anymore: "This meeting is not editable anymore."
+  text_meeting_not_present_anymore: "This meeting was deleted. Please select another meeting."
+  label_add_work_package_to_meeting_dialog_title: "Add work package to meeting"
+  label_add_work_package_to_meeting_dialog_button: "Add to meeting"
+  label_meeting_selection_caption: "It's only possible to add this work package to open, upcoming meetings."
+  text_add_work_package_to_meeting_description: "A work package can be added to one or multiple meetings for discussion. Any notes concerning it are also visible here."
+  text_agenda_item_no_notes: "No notes provided"
+  text_agenda_item_not_editable_anymore: "This agenda item is not editable anymore."
+  text_work_package_has_no_upcoming_meeting_agenda_items: "This work package is not scheduled in an upcoming meeting agenda yet."
+  text_work_package_add_to_meeting_hint: "Use the \"Add to meeting\" button to add this work package to an upcoming meeting."
+  text_work_package_has_no_past_meeting_agenda_items: "This work package was not mentioned in a past meeting."
